@@ -1,0 +1,730 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Marte (iqianduan@126.com)
+ * @date    2017-09-04 09:45:01
+ * @version $Id$
+ */
+
+/* common */
+
+*{ box-sizing:border-box;}
+body { margin: 0;}
+
+h1,h2,h3,h4 {
+    font-family: "UniversLTStd", Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #043f8b;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+p {
+    margin: 30px auto;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+@font-face {
+    font-family: "UniversLTStd";
+    font-style: normal;
+    font-weight: 300;
+    src: url(./fonts/UniversLTStd-UltraCn.woff) format("woff")
+}
+@font-face {
+    font-family: "OfficinaSansStd";
+    font-style: normal;
+    font-weight: 300;
+    src: url(./fonts/OfficinaSansStd-Book.woff) format("woff")
+}
+
+/* banner */
+
+.banner{
+    position: relative;
+    /*解决子元素margin溢出父元素的问题*/
+    overflow: hidden;
+}
+
+/*用伪元素开辟出一块空间写内容*/
+.banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 382px;
+    background-color: #dceefc;
+}
+
+@media (min-width: 1117px) {
+    .banner:before {
+        display: none;
+    }
+}
+
+.banner-img {
+    background-image: url("pic/768-banner.jpg");
+    /*background-size设置背景图像的宽度和高度，第一个只是宽度，第二个是高度，高度不写默认为auto*/
+    background-size: 100%;
+    height: 100vw;
+    background-repeat: no-repeat;
+    margin-top: 380px;
+}
+
+@media (min-width: 1117px) {
+    .banner-img {
+        background-image: url("pic/768.jpg");
+        margin-top: 0;
+        height: 109vw;
+    }
+}
+
+.banner .content {
+    text-align: center;
+    position: absolute;
+    font-family: "UniversLTStd", Arial, sans-serif;
+    top: 90px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    color: #2d2d2d;
+    animation-name: slideRight;
+    animation-duration: 0.7s;
+}
+
+@keyframes slideRight {
+    from{
+        transform: translateX(-100%);
+        opactiy: 0;
+    }
+    to{
+        transform: translateX(0%);
+        opactiy: 1;
+    }
+}
+
+@media (min-width: 1117px) {
+    .banner .content {
+        width: 270px;
+        margin-left: 140px;
+        text-align: left;
+    }
+}
+
+.banner small {
+    display: inline-block;
+    background-color: #043f8b;
+    color: white;
+    font-size: 24px;
+    line-height: 0.9;
+    padding:5px;
+}
+
+@media (min-width:767px) {
+    .banner small {
+        font-size: 32px;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 1117px) {
+    .banner small {
+        font-size: 28px;
+        line-height: 0.9;
+
+    }
+}
+
+.banner p {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+
+}
+.banner p.title {
+    font-size: 72px;
+    margin: 25px 0;
+    line-height: 65px;
+    position: relative;
+    padding-bottom: 25px;
+}
+.banner p.title:after {
+    content: "";
+    display: block;
+    background-color: #043f8b;
+    width: 95px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -47px;
+}
+
+@media (min-width: 767px) {
+    .banner p {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .banner p.title {
+        font-size: 100px;
+        padding-bottom: 28px;
+    }
+
+    .banner p.title:after {
+        width: 120px;
+        margin-left: -60px;
+    }
+}
+
+@media (min-width: 1117px) {
+    .banner p {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .banner p.title {
+        line-height: 78px;
+    }
+
+    .banner p.title:after {
+        width: 95px;
+        left: 20%;
+        margin-left: -55px;
+    }
+
+}
+
+/* header */
+
+.header {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 20px 90px 20px;
+}
+
+.header h1 {
+    position: relative;
+    padding-top: 60px;
+    font-size: 72px;
+    line-height: 0.85;
+}
+.header h1:before {
+    content: "";
+    display: block;
+    background: #043f8b;
+    position: absolute;
+    width: 140px;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    margin-left: -70px;
+}
+
+@media (min-width: 767px) {
+    .header {
+        min-width: 568px;
+    }
+}
+
+@media (min-width: 1117px) {
+    .banner {
+        position: relative;
+    }
+    .header {
+        position: absolute;
+        transform:translateY(-100%);
+        left: 40px;
+        right: 40px;
+        width: 768px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner {
+        position: relative;
+    }
+    .header {
+        position: absolute;
+        transform:translateY(-120%);
+        left: 40px;
+        right: 40px;
+        width: 980px;
+    }
+}
+
+.header p {
+    font-family: "OfficinaSansStd", Arial, sans-serif;
+    color: #2d2d2d;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 1117px) {
+    .header p {
+        font-size: 20px;
+    }
+}
+
+.header p.description {
+    font-size: 32px;
+    line-height: 36px;
+    font-family: "UniversLTStd", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.header .button {
+    display: inline-block;
+    width: auto;
+    padding: 16px 40px;
+    border: 2px solid #043f8b;
+    border-radius: 50px;
+    font-family: "UniversLTStd", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #043f8b;
+}
+
+/* main */
+
+.main {
+    font-family: "OfficinaSansStd", Arial, sans-serif;
+    color: #2d2d2d;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* svg */
+.divider {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 1117px) {
+    .divider {
+        display: none;
+    }
+}
+
+/* section challenges */
+
+.challenges {
+    padding: 70px 0;
+}
+
+.challenges-inner {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1180px;
+}
+
+.challenges-title {
+    text-align: center;
+    color: #eb272c;
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+.challenges-copy {
+    text-align: center;
+}
+@media (min-width: 767px) {
+    .challenges-copy {
+        font-size: 20px;
+    }
+}
+
+.challenges-col img {
+    max-width: 100%;
+}
+
+.challenges-col {
+    padding-top: 50px;
+}
+
+.challenges-col.left {
+    text-align: center;
+}
+
+.challenges-sub {
+    color: #eb272c;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.challenges-description {
+    margin-top: 0;
+}
+
+@media (min-width: 1117px){
+    .challenges-col.right {
+        float: right;
+        width: 50%;
+    }
+     .challenges-col.left {
+        float: left;
+        width: 50%;
+        padding-right: 40px;
+    }
+    .challenges-inner:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+/* section solution */
+
+.solution {
+    background: #043f8b;
+    color: white;
+    padding-top: 120px;
+    position: relative;
+}
+
+/* 设置三角图标 */
+.solution:before {
+    content: "";
+    /*注意位置*/
+    position: absolute;
+    left: 50%;
+    height: 0;
+    width: 0;
+    top: 0;
+    margin-left: -27px;
+    border-top: 27px solid white;
+    border-left: 27px solid transparent;
+    border-right: 27px solid transparent;
+}
+
+.container {
+    width: 320px;
+    margin: 0 auto;
+    pading: 0 20px;
+    text-align: center;
+}
+
+@media (min-width:767px) {
+    .container {
+        min-width: 568px;
+    }
+}
+
+@media (min-width:1117px) {
+    .container {
+        min-width: 980px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.solution-title {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+@media (min-width:1117px) {
+    .solution-intro {
+        font-size: 20px;
+    }
+}
+
+.solution-image {
+    max-width: 85%;
+}
+
+.solution-image.left {
+    float: left;
+}
+.solution-image.right {
+    float: right;
+}
+/* 设置伪元素清除浮动 */
+.solution-inner:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+@media (min-width:1117px) {
+    .solution-content.scoping {
+        max-width: 450px;
+        box-sizing: content-box;
+        /*允许有浮动*/
+        clear: none;
+        padding-top: 200px;
+        padding-bottom: 75px;
+        padding-left: calc(50% - 500px);
+    }
+        .solution-image {
+        max-width: 50%;
+    }
+}
+
+.solution-sub {
+    color: white;
+    font-size: 24px;
+    margin: 0 auto;
+}
+.solution-content {
+    clear: both;
+    text-align: center;
+    padding: 30px;
+    max-width: 100%;
+}
+
+@media (min-width:1117px) {
+    .solution-content.teacher {
+        clear: right;
+        padding-right: 40px;
+        padding-left: calc(50% + 50px);
+        padding-top: 170px;
+    }
+}
+
+.solution-standout {
+    font-size: 48px;
+    padding: 0 0 15px;
+    font-family: "UniversLTStd", Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+@media (min-width:1117px) {
+    .solution-description {
+         font-size: 20px;
+    }
+}
+
+@media (min-width:1117px) {
+    .solution-content.ipad {
+        max-width: 50%;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-right: 80px;
+        padding-left: calc(50% - 500px);
+        float: left;
+    }
+}
+
+/* section in-action */
+
+.in-action {
+    margin: 0 auto;
+    padding: 100px 0 60px 0;
+}
+
+.in-action .container {
+    padding: 0 20px;
+}
+
+@media (min-width:767px) {
+    .in-action .container p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:767px) {
+    .in-action .container {
+        width: 768px;
+    }
+}
+
+
+.in-action-title {
+    margin: 0 auto;
+    font-size: 30px;
+    color: #eb272c;
+}
+
+.laptop {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.laptop-background {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+@media (min-width:767px) {
+    .laptop-background {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (min-width:1117px) {
+    .laptop-background {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.laptop-screen {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 15px;
+  bottom: 20px;
+  border: 2px solid #043f8b;
+  box-sizing: content-box;
+}
+
+@media (min-width: 767px) {
+  .laptop-screen {
+    left: 95px;
+    right: 95px;
+    top: 20px;
+    bottom: 50px;
+  }
+}
+
+@media (min-width: 117px) {
+  .laptop-screen {
+    left: 120px;
+    right: 120px;
+    top: 60px;
+    bottom: 60px;
+  }
+}
+
+
+
+.cta .button {
+    display: inline-block;
+    border: 2px solid #043f8b;
+    color: #043f8b;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    padding: 16px 40px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "UniversLTStd", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #043f8b;
+    font-family: "OfficinaSansStd", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 0 60px;
+    text-align: center;
+}
+
+.container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.contact-cta {
+    position: relative;
+    overflow: hidden;
+    padding-top: 90px;
+}
+
+footer .contact-cta:before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    background: url("pic/sprite.svg") -10px -183px no-repeat;
+    width: 980px;
+    height: 27px;
+    transform: translateX(-50%);
+}
+
+.contact-cta h2 {
+    color: white;
+    font-size: 80px;
+    margin-top: 0;
+    margin-bottom: 65px;
+}
+
+footer .list {
+    display: inline-block;
+    /*图像对齐*/
+    vertical-align: middle;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+footer .list li {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 22px;
+    padding: 10px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (min-width: 1117px) {
+    footer .list li {
+        display: inline;
+    }
+}
+
+footer .list li>a ,.footer-tel {
+    display: inline-block;
+    padding: 0;
+    padding-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+footer .contact-cta ul li>a:before, footer .contact-cta ul li>span:before {
+    content: "";
+    width: 61px;
+    height: 60px;
+    background: url(pic/sprite2.svg) 0px 0px no-repeat;
+    display: inline-block;
+    vertical-align: -20px;
+    margin-right: 20px;
+    /*在旋转元素不希望看到其背面*/
+    backface-visibility: hidden;
+
+}
+
+/*坐标系还是存在疑问的*/
+
+footer .contact-cta ul li.email a:before {
+    background-position: 0px -340px;
+}
+footer .contact-cta ul li.tel span:before {
+    background-position: -61px -340px;
+}
+footer .contact-cta ul li.message a:before {
+    background-position: -123px -340px;
+}
